@@ -4,4 +4,6 @@
   --color-tertiary: rgba(0, 0, 0, 0.45);
   --color-border: rgba(0, 0, 0, 0.15);
   --color-hover: rgba(0, 0, 0, 0.04);
+  --color-primary: #1890ff;
+  --color-danger: #f5222d;
 }
