@@ -1,6 +1,7 @@
 <template>
   <div :class="$style.home">
     <h1 :class="$style.title">{{ $t('common.title') }}</h1>
+    <h2 :class="$style.caption">{{ $t('views.home.caption') }}</h2>
   </div>
 </template>
 
@@ -21,6 +22,11 @@ export default class Home extends Vue {}
     text-align: center;
     font-size: 32px;
     font-weight: 700;
+  }
+
+  .caption {
+    margin: 24px;
+    text-align: center;
   }
 }
 </style>
