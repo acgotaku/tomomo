@@ -6,9 +6,14 @@
       <div :class="$style.japan">
         <h3 :class="$style.japanTitle">{{ $t('views.home.japan') }}</h3>
         <div :class="$style.japanDate">
-          <Select :class="$style.select">
-            <option>令和</option>
-            <option>平成</option>
+          <Select :class="$style.select" v-model="currentEra">
+            <option
+              v-for="era in eraOptions"
+              :key="era.value"
+              :value="era.value"
+            >
+              {{ era.label }}
+            </option>
           </Select>
           <TInput :class="$style.input" />
           <span :class="$style.date">{{ $t('common.year') }}</span>
@@ -36,8 +41,40 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 
+interface OptionItem {
+  value: string;
+  label: string;
+}
+
 @Component
-export default class Home extends Vue {}
+export default class Home extends Vue {
+  currentEra = 'reiwa';
+
+  get eraOptions(): Array<OptionItem> {
+    return [
+      {
+        value: 'reiwa',
+        label: this.$i18n.t('views.home.era.reiwa') as string
+      },
+      {
+        value: 'heisei',
+        label: this.$i18n.t('views.home.era.heisei') as string
+      },
+      {
+        value: 'showa',
+        label: this.$i18n.t('views.home.era.showa') as string
+      },
+      {
+        value: 'taisho',
+        label: this.$i18n.t('views.home.era.taisho') as string
+      },
+      {
+        value: 'meiji',
+        label: this.$i18n.t('views.home.era.meiji') as string
+      }
+    ];
+  }
+}
 </script>
 
 <style lang="postcss" module>

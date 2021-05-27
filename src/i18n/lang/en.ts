@@ -9,7 +9,14 @@ export default {
     home: {
       caption: 'Japanese Calendar Conversion',
       japan: 'Japanese Calendar',
-      west: 'Western Calendar'
+      west: 'Western Calendar',
+      era: {
+        reiwa: 'Reiwa',
+        heisei: 'Heisei',
+        showa: 'Showa',
+        taisho: 'Taisho',
+        meiji: 'Meiji'
+      }
     }
   }
 };
