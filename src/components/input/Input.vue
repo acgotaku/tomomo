@@ -39,8 +39,6 @@ export default class Input extends Vue {
   @Prop({ default: false, type: Boolean }) readonly readonly!: boolean;
   @Prop({ default: false, type: Boolean }) readonly disabled!: boolean;
   @Prop({ default: false, type: Boolean }) readonly required!: boolean;
-  @Prop({ default: false, type: Boolean }) readonly loading!: boolean;
-  @Prop({ default: false, type: Boolean }) readonly clearable!: boolean;
   @Prop({ default: false, type: Boolean }) readonly invalid!: boolean;
   @Prop({ default: false }) readonly placeholder!: string;
 
@@ -113,6 +111,7 @@ export default class Input extends Vue {
     line-height: 20px;
     border: 1px solid var(--color-border);
     color: var(--color-main);
+    text-align: right;
 
     &:read-only {
       user-select: none;

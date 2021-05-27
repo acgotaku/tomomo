@@ -6,6 +6,10 @@
       <div :class="$style.japan">
         <h3 :class="$style.japanTitle">{{ $t('views.home.japan') }}</h3>
         <div :class="$style.japanDate">
+          <Select :class="$style.select">
+            <option>令和</option>
+            <option>平成</option>
+          </Select>
           <TInput :class="$style.input" />
           <span :class="$style.date">{{ $t('common.year') }}</span>
           <TInput :class="$style.input" />
@@ -39,7 +43,7 @@ export default class Home extends Vue {}
 <style lang="postcss" module>
 .home {
   margin: 0 auto;
-  max-width: 860px;
+  max-width: 960px;
 
   .title {
     padding-top: 16px;
@@ -71,8 +75,12 @@ export default class Home extends Vue {}
       align-items: center;
     }
 
+    .select {
+      width: 80px;
+      margin-right: 32px;
+    }
     .input {
-      width: 96px;
+      width: 80px;
     }
 
     .date {
@@ -95,7 +103,7 @@ export default class Home extends Vue {}
     }
 
     .input {
-      width: 96px;
+      width: 80px;
     }
 
     .date {
