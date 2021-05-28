@@ -19,6 +19,7 @@
             :class="$style.input"
             v-model.number="japanYear"
             :invalid="!validJapanYear"
+            inputmode="numeric"
             type="number"
             @on-input="updateWestYear"
           />
@@ -27,6 +28,7 @@
             :class="$style.input"
             v-model.number="japanMonth"
             :invalid="!validMonth"
+            inputmode="numeric"
             type="number"
           />
           <span :class="$style.date">{{ $t('common.month') }}</span>
@@ -34,6 +36,7 @@
             :class="$style.input"
             v-model.number="japanDay"
             :invalid="!validDay"
+            inputmode="numeric"
             type="number"
           />
           <span :class="$style.date">{{ $t('common.day') }}</span>
@@ -46,6 +49,7 @@
             :class="$style.input"
             v-model.number="westYear"
             :invalid="!validWestYear"
+            inputmode="numeric"
             type="number"
             @on-input="updateJapanYear"
           />
@@ -54,6 +58,7 @@
             :class="$style.input"
             v-model.number="westMonth"
             :invalid="!validMonth"
+            inputmode="numeric"
             type="number"
           />
           <span :class="$style.date">{{ $t('common.month') }}</span>
@@ -61,6 +66,7 @@
             :class="$style.input"
             v-model.number="westDay"
             :invalid="!validDay"
+            inputmode="numeric"
             type="number"
           />
           <span :class="$style.date">{{ $t('common.day') }}</span>

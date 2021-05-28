@@ -7,6 +7,7 @@
     <input
       ref="input"
       :type="inputType"
+      :inputmode="inputmode"
       :autocomplete="autocomplete"
       :class="{
         [$style.inner]: true,
@@ -34,6 +35,7 @@ import { Component, Vue, Prop, Watch } from 'vue-property-decorator';
 export default class Input extends Vue {
   @Prop({ default: '' }) readonly value!: string;
   @Prop({ default: 'text', type: String }) readonly type!: string;
+  @Prop({ default: 'text', type: String }) readonly inputmode!: string;
   @Prop({ default: 'no', type: String }) readonly autocomplete!: string;
   @Prop({ default: 2 }) readonly rows!: number;
   @Prop({ default: false, type: Boolean }) readonly readonly!: boolean;
