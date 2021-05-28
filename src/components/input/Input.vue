@@ -91,6 +91,15 @@ export default class Input extends Vue {
 }
 </script>
 <style lang="postcss" module>
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
 .input {
   position: relative;
   height: 100%;
