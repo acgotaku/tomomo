@@ -78,6 +78,13 @@
         </div>
       </div>
     </div>
+    <div :class="$style.notes">
+      <p>{{ $t('views.home.notes.reiwa') }}</p>
+      <p>{{ $t('views.home.notes.heisei') }}</p>
+      <p>{{ $t('views.home.notes.showa') }}</p>
+      <p>{{ $t('views.home.notes.taisho') }}</p>
+      <p>{{ $t('views.home.notes.meiji') }}</p>
+    </div>
   </div>
 </template>
 
@@ -376,6 +383,16 @@ export default class Home extends Vue {
       margin: 0 8px;
     }
   }
+
+  .notes {
+    margin-top: 32px;
+    font-size: 14px;
+    color: var(--color-secondary);
+
+    p {
+      margin: 4px 0;
+    }
+  }
 }
 @media screen and (max-width: $Mobile) {
   .home {
@@ -408,6 +425,9 @@ export default class Home extends Vue {
         width: 56px;
       }
     }
+  }
+  .notes {
+    text-align: center;
   }
 }
 </style>
