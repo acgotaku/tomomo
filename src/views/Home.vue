@@ -385,7 +385,7 @@ export default class Home extends Vue {
   }
 
   .notes {
-    margin-top: 32px;
+    padding: 32px 0;
     font-size: 14px;
     color: var(--color-secondary);
 
