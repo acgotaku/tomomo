@@ -109,6 +109,7 @@ export default class Home extends Vue {
     this.westYear = now.getFullYear();
     this.month = now.getMonth() + 1;
     this.day = now.getDate();
+    this.updateJapanYear();
   }
 
   get eraOptions(): Array<OptionItem> {
