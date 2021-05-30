@@ -5,41 +5,45 @@
     <div :class="$style.convert">
       <div :class="$style.japan">
         <h3 :class="$style.japanTitle">{{ $t('views.home.japan') }}</h3>
-        <div :class="$style.japanDate">
-          <Select :class="$style.select" v-model="currentEra">
-            <option
-              v-for="era in eraOptions"
-              :key="era.value"
-              :value="era.value"
-            >
-              {{ era.label }}
-            </option>
-          </Select>
-          <TInput
-            :class="$style.input"
-            v-model.number="japanYear"
-            :invalid="!validJapanYear"
-            inputmode="numeric"
-            type="number"
-            @on-input="updateWestYear"
-          />
-          <span :class="$style.date">{{ $t('common.year') }}</span>
-          <TInput
-            :class="$style.input"
-            v-model.number="japanMonth"
-            :invalid="!validMonth"
-            inputmode="numeric"
-            type="number"
-          />
-          <span :class="$style.date">{{ $t('common.month') }}</span>
-          <TInput
-            :class="$style.input"
-            v-model.number="japanDay"
-            :invalid="!validDay"
-            inputmode="numeric"
-            type="number"
-          />
-          <span :class="$style.date">{{ $t('common.day') }}</span>
+        <div :class="$style.japanDateWrapper">
+          <div :class="$style.era">
+            <Select :class="$style.select" v-model="currentEra">
+              <option
+                v-for="era in eraOptions"
+                :key="era.value"
+                :value="era.value"
+              >
+                {{ era.label }}
+              </option>
+            </Select>
+          </div>
+          <div :class="$style.japanDate">
+            <TInput
+              :class="$style.input"
+              v-model.number="japanYear"
+              :invalid="!validJapanYear"
+              inputmode="numeric"
+              type="number"
+              @on-input="updateWestYear"
+            />
+            <span :class="$style.date">{{ $t('common.year') }}</span>
+            <TInput
+              :class="$style.input"
+              v-model.number="japanMonth"
+              :invalid="!validMonth"
+              inputmode="numeric"
+              type="number"
+            />
+            <span :class="$style.date">{{ $t('common.month') }}</span>
+            <TInput
+              :class="$style.input"
+              v-model.number="japanDay"
+              :invalid="!validDay"
+              inputmode="numeric"
+              type="number"
+            />
+            <span :class="$style.date">{{ $t('common.day') }}</span>
+          </div>
         </div>
       </div>
       <div :class="$style.west">
@@ -288,6 +292,8 @@ export default class Home extends Vue {
 </script>
 
 <style lang="postcss" module>
+@import '@/styles/variables.css';
+
 .home {
   margin: 0 auto;
   max-width: 960px;
@@ -320,11 +326,15 @@ export default class Home extends Vue {
     &Date {
       display: flex;
       align-items: center;
+
+      &Wrapper {
+        display: flex;
+      }
     }
 
     .select {
       width: 80px;
-      margin-right: 32px;
+      margin-right: 16px;
     }
     .input {
       width: 80px;
@@ -356,6 +366,39 @@ export default class Home extends Vue {
     .date {
       display: inline-block;
       margin: 0 8px;
+    }
+  }
+}
+@media screen and (max-width: $Mobile) {
+  .home {
+    .convert {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .japan {
+      &Date {
+        flex-wrap: wrap;
+        align-items: center;
+
+        &Wrapper {
+          flex-direction: column;
+        }
+      }
+
+      .era {
+        margin-bottom: 8px;
+      }
+
+      .input {
+        width: 56px;
+      }
+    }
+
+    .west {
+      .input {
+        width: 56px;
+      }
     }
   }
 }
