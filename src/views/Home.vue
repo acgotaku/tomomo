@@ -1,5 +1,6 @@
 <template>
   <div :class="$style.home">
+    <Lang />
     <h1 :class="$style.title">{{ $t('common.title') }}</h1>
     <h2 :class="$style.caption">{{ $t('views.home.caption') }}</h2>
     <div :class="$style.convert">
@@ -83,13 +84,18 @@
 <script lang="ts">
 import { Component, Vue, Watch } from 'vue-property-decorator';
 import dateUtils from '@/utils/date';
+import Lang from '@/components/views/Lang.vue';
 
 interface OptionItem {
   value: string;
   label: string;
 }
 
-@Component
+@Component({
+  components: {
+    Lang
+  }
+})
 export default class Home extends Vue {
   currentEra = 'reiwa';
 
@@ -295,6 +301,7 @@ export default class Home extends Vue {
 @import '@/styles/variables.css';
 
 .home {
+  position: relative;
   margin: 0 auto;
   max-width: 960px;
 

@@ -1,4 +1,5 @@
 :root {
+  -color-bg: #fff;
   --color-main: rgba(0, 0, 0, 0.85);
   --color-secondary: rgba(0, 0, 0, 0.65);
   --color-tertiary: rgba(0, 0, 0, 0.45);
