@@ -6,6 +6,19 @@ module.exports = {
     disableHostCheck: true,
     port: 3300
   },
+  pwa: {
+    name: 'Tomomo',
+    themeColor: '#FF5454',
+    msTileColor: '#000000',
+    manifestOptions: {
+      short_name: 'Tomomo',
+      start_url: '/'
+    },
+    workboxOptions: {
+      clientsClaim: true,
+      skipWaiting: true
+    }
+  },
   chainWebpack: config => {
     config.optimization.splitChunks({
       chunks: 'all',
