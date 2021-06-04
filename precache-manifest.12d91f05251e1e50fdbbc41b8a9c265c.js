@@ -28,7 +28,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/language.f96fc010.svg"
   },
   {
-    "revision": "ba18b6ef6b9ae7d1db07c652b8abf797",
+    "revision": "7c080e624ba355a0533f813b34f34aa4",
     "url": "/index.html"
   },
   {
@@ -60,7 +60,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/vendors~convert.a8b4e196.js"
   },
   {
-    "revision": "bc5c8e540c1e793eb904f724ab70e504",
+    "revision": "2f6cddaa843e0e47fc1ce98b97c86bed",
     "url": "/manifest.json"
   },
   {
