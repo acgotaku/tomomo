@@ -6,8 +6,8 @@ export default {
     day: '日'
   },
   views: {
-    home: {
-      caption: '日本年号转换',
+    convert: {
+      title: '日本年号转换',
       japan: '日本年号',
       west: '公历年',
       era: {

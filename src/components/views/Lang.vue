@@ -58,11 +58,12 @@ export default class Lang extends Vue {
 <style lang="postcss" module>
 .lang {
   position: absolute;
-  top: 24px;
-  right: 24px;
+  top: 20px;
+  right: 16px;
   display: flex;
   align-items: flex-end;
   flex-direction: column;
+  z-index: 100;
 }
 
 .button {
