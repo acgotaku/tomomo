@@ -6,8 +6,8 @@ export default {
     day: 'Day'
   },
   views: {
-    home: {
-      caption: 'Japanese Calendar Conversion',
+    convert: {
+      title: 'Japanese Calendar Conversion',
       japan: 'Japanese Calendar',
       west: 'Western Calendar',
       era: {
