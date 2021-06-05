@@ -10,9 +10,9 @@
           }"
         >
           <img
-            width="64"
-            height="64"
-            src="@/assets/icons/convert.svg"
+            width="128"
+            height="128"
+            src="@/assets/icons/convert.png"
             :class="$style.icon"
           />
           <span :class="$style.linkText"> {{ $t('views.convert.title') }}</span>
