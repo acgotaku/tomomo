@@ -1,14 +1,18 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ae4bf4799789c47e17cd",
-    "url": "/css/app.d2a48bef.css"
+    "revision": "d43f4653ce76643c1625",
+    "url": "/css/app.9b93c7e6.css"
   },
   {
     "revision": "284f37d7653c43750847",
     "url": "/css/calendar.2fdf57d8.css"
   },
   {
-    "revision": "1f638a20e4f07636ffef",
+    "revision": "26b7637f123925b852d9",
+    "url": "/css/hirakana.9eba485a.css"
+  },
+  {
+    "revision": "ef06363884d523facd66",
     "url": "/css/home.54fa92e5.css"
   },
   {
@@ -16,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/css/not_found.871ab3f1.css"
   },
   {
-    "revision": "3fd25d52857dc5c5cb7263f039c40970",
-    "url": "/img/calendar.3fd25d52.png"
+    "revision": "4f9df683b488d61f1fdb52e407c77e1b",
+    "url": "/img/calendar.4f9df683.png"
   },
   {
     "revision": "d4c6033bcc2b9eee938fd8a003f147df",
@@ -28,12 +32,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/language.f96fc010.svg"
   },
   {
-    "revision": "19456bd0e6013bb4bbb7e5c358a399d2",
+    "revision": "7924f22c44deae727e2739143ae0f911",
     "url": "/index.html"
   },
   {
-    "revision": "ae4bf4799789c47e17cd",
-    "url": "/js/app.ea8a1e43.js"
+    "revision": "d43f4653ce76643c1625",
+    "url": "/js/app.e7b851b4.js"
   },
   {
     "revision": "284f37d7653c43750847",
@@ -44,16 +48,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/chunk-libs.f879d31a.js"
   },
   {
-    "revision": "1f638a20e4f07636ffef",
-    "url": "/js/home.f2566702.js"
+    "revision": "26b7637f123925b852d9",
+    "url": "/js/hirakana.de891890.js"
+  },
+  {
+    "revision": "ef06363884d523facd66",
+    "url": "/js/home.7245bdfd.js"
   },
   {
     "revision": "947860d641cd1bcddace",
     "url": "/js/not_found.a7e21627.js"
   },
   {
-    "revision": "1ac1a3c9f500072e9301",
-    "url": "/js/runtime.8e3c4a05.js"
+    "revision": "ea3636585b5b81894ecf",
+    "url": "/js/runtime.35d5cb7f.js"
   },
   {
     "revision": "276892b55ca0812373d4",
