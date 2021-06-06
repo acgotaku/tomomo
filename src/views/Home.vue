@@ -6,16 +6,18 @@
         <router-link
           :class="$style.link"
           :to="{
-            name: 'convert'
+            name: 'calendar'
           }"
         >
           <img
             width="128"
             height="128"
-            src="@/assets/icons/convert.png"
+            src="@/assets/icons/calendar.png"
             :class="$style.icon"
           />
-          <span :class="$style.linkText"> {{ $t('views.convert.title') }}</span>
+          <span :class="$style.linkText">
+            {{ $t('views.calendar.title') }}</span
+          >
         </router-link>
       </div>
     </div>

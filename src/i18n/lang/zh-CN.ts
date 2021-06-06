@@ -6,7 +6,7 @@ export default {
     day: '日'
   },
   views: {
-    convert: {
+    calendar: {
       title: '日本年号转换',
       japan: '日本年号',
       west: '公历年',

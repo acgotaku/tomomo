@@ -1,11 +1,11 @@
 <template>
-  <div :class="$style.convert">
+  <div :class="$style.calendar">
     <Header />
-    <div :class="$style.convertInner">
-      <h2 :class="$style.title">{{ $t('views.convert.title') }}</h2>
+    <div :class="$style.calendarInner">
+      <h2 :class="$style.title">{{ $t('views.calendar.title') }}</h2>
       <div :class="$style.container">
         <div :class="$style.japan">
-          <h3 :class="$style.japanTitle">{{ $t('views.convert.japan') }}</h3>
+          <h3 :class="$style.japanTitle">{{ $t('views.calendar.japan') }}</h3>
           <div :class="$style.japanDateWrapper">
             <div :class="$style.era">
               <Select :class="$style.select" v-model="currentEra">
@@ -48,7 +48,7 @@
           </div>
         </div>
         <div :class="$style.west">
-          <h3 :class="$style.westTitle">{{ $t('views.convert.west') }}</h3>
+          <h3 :class="$style.westTitle">{{ $t('views.calendar.west') }}</h3>
           <div :class="$style.westDate">
             <TInput
               :class="$style.input"
@@ -79,11 +79,11 @@
         </div>
       </div>
       <div :class="$style.notes">
-        <p>{{ $t('views.convert.notes.reiwa') }}</p>
-        <p>{{ $t('views.convert.notes.heisei') }}</p>
-        <p>{{ $t('views.convert.notes.showa') }}</p>
-        <p>{{ $t('views.convert.notes.taisho') }}</p>
-        <p>{{ $t('views.convert.notes.meiji') }}</p>
+        <p>{{ $t('views.calendar.notes.reiwa') }}</p>
+        <p>{{ $t('views.calendar.notes.heisei') }}</p>
+        <p>{{ $t('views.calendar.notes.showa') }}</p>
+        <p>{{ $t('views.calendar.notes.taisho') }}</p>
+        <p>{{ $t('views.calendar.notes.meiji') }}</p>
       </div>
     </div>
   </div>
@@ -106,7 +106,7 @@ interface OptionItem {
     Header
   }
 })
-export default class Convert extends Vue {
+export default class Calendar extends Vue {
   currentEra = 'reiwa';
 
   japanYear = 1;
@@ -126,23 +126,23 @@ export default class Convert extends Vue {
     return [
       {
         value: 'reiwa',
-        label: this.$i18n.t('views.convert.era.reiwa') as string
+        label: this.$i18n.t('views.calendar.era.reiwa') as string
       },
       {
         value: 'heisei',
-        label: this.$i18n.t('views.convert.era.heisei') as string
+        label: this.$i18n.t('views.calendar.era.heisei') as string
       },
       {
         value: 'showa',
-        label: this.$i18n.t('views.convert.era.showa') as string
+        label: this.$i18n.t('views.calendar.era.showa') as string
       },
       {
         value: 'taisho',
-        label: this.$i18n.t('views.convert.era.taisho') as string
+        label: this.$i18n.t('views.calendar.era.taisho') as string
       },
       {
         value: 'meiji',
-        label: this.$i18n.t('views.convert.era.meiji') as string
+        label: this.$i18n.t('views.calendar.era.meiji') as string
       }
     ];
   }
@@ -311,7 +311,7 @@ export default class Convert extends Vue {
 <style lang="postcss" module>
 @import '@/styles/variables.css';
 
-.convert {
+.calendar {
   display: block;
 
   &Inner {
@@ -395,7 +395,7 @@ export default class Convert extends Vue {
   }
 }
 @media screen and (max-width: $Mobile) {
-  .convert {
+  .calendar {
     .container {
       flex-direction: column;
       align-items: center;
