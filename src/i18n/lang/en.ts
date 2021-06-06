@@ -24,6 +24,9 @@ export default {
         taisho: 'The first year of the Taisho <1912> is from July 30th.',
         meiji: 'The first year of the Meiji <1868> is from September 8th.'
       }
+    },
+    hirakana: {
+      title: 'Japanese Conversion'
     }
   }
 };

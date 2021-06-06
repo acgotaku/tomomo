@@ -1,8 +1,10 @@
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
 const Home = () => import(/* webpackChunkName: "home" */ '@/views/Home.vue');
-const Convert = () =>
+const Calendar = () =>
   import(/* webpackChunkName: "calendar" */ '@/views/Calendar.vue');
+const Hirakana = () =>
+  import(/* webpackChunkName: "hirakana" */ '@/views/Hirakana.vue');
 const NotFound = () =>
   import(/* webpackChunkName: "not_found" */ '@/views/NotFound.vue');
 
@@ -17,7 +19,12 @@ const routes: Array<RouteConfig> = [
   {
     path: '/calendar',
     name: 'calendar',
-    component: Convert
+    component: Calendar
+  },
+  {
+    path: '/hirakana',
+    name: 'hirakana',
+    component: Hirakana
   }
 ];
 

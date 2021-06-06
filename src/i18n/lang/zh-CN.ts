@@ -24,6 +24,9 @@ export default {
         taisho: '大正元年 <1912> 是从 7 月 30 日开始。',
         meiji: '明治元年 <1868> 是从 9 月 8 日开始。'
       }
+    },
+    hirakana: {
+      title: '平假名片假名转换'
     }
   }
 };

@@ -4,14 +4,12 @@
     @mouseenter="inputHover = true"
     @mouseleave="inputHover = false"
   >
-    <input
+    <textarea
       ref="input"
-      :type="inputType"
-      :inputmode="inputmode"
       :autocomplete="autocomplete"
+      :rows="rows"
       :class="{
         [$style.inner]: true,
-        [$style.inputText]: true,
         [$style.hover]: inputHover,
         [$style.error]: inValidState
       }"
@@ -24,7 +22,8 @@
       :disabled="disabledState"
       :placeholder="placeholder"
       :required="required"
-    />
+    >
+    </textarea>
   </div>
 </template>
 
@@ -32,11 +31,11 @@
 import { Component, Vue, Prop, Watch } from 'vue-property-decorator';
 
 @Component
-export default class Input extends Vue {
+export default class Textarea extends Vue {
   @Prop({ default: '' }) readonly value!: string;
-  @Prop({ default: 'text', type: String }) readonly type!: string;
   @Prop({ default: 'text', type: String }) readonly inputmode!: string;
   @Prop({ default: 'no', type: String }) readonly autocomplete!: string;
+  @Prop({ default: 2 }) readonly rows!: number;
   @Prop({ default: false, type: Boolean }) readonly readonly!: boolean;
   @Prop({ default: false, type: Boolean }) readonly disabled!: boolean;
   @Prop({ default: false, type: Boolean }) readonly required!: boolean;
@@ -52,10 +51,6 @@ export default class Input extends Vue {
   onValueChanged(): void {
     this.currentValue = this.value;
     this.$emit('on-change', this.currentValue);
-  }
-
-  get inputType(): string {
-    return this.type;
   }
 
   get inValidState(): boolean {
@@ -92,27 +87,12 @@ export default class Input extends Vue {
 }
 </script>
 <style lang="postcss" module>
-input[type='number'] {
-  -moz-appearance: textfield;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-}
-
 .input {
   position: relative;
   height: 100%;
   width: 100%;
   display: flex;
   align-items: stretch;
-
-  &Text {
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-  }
 
   .inner {
     width: 100%;
@@ -121,12 +101,6 @@ input::-webkit-inner-spin-button {
     line-height: 20px;
     border: 1px solid var(--color-border);
     color: var(--color-main);
-    text-align: right;
-
-    &:read-only {
-      user-select: none;
-      cursor: pointer;
-    }
 
     &:hover,
     &.hover,
