@@ -92,13 +92,9 @@
 <script lang="ts">
 import { Component, Vue, Watch } from 'vue-property-decorator';
 import dateUtils from '@/utils/date';
+import { OptionItem } from '@/components/select';
 import Lang from '@/components/views/Lang.vue';
 import Header from '@/layout/Header.vue';
-
-interface OptionItem {
-  value: string;
-  label: string;
-}
 
 @Component({
   components: {

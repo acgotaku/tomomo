@@ -26,7 +26,15 @@ export default {
       }
     },
     hirakana: {
-      title: '平假名片假名转换'
+      title: '平假名片假名转换',
+      width: {
+        full: '全角',
+        half: '半角'
+      },
+      style: {
+        hiragana: '平假名',
+        katakana: '片假名'
+      }
     }
   }
 };

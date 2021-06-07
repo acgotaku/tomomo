@@ -101,6 +101,7 @@ export default class Textarea extends Vue {
     line-height: 20px;
     border: 1px solid var(--color-border);
     color: var(--color-main);
+    resize: none;
 
     &:hover,
     &.hover,

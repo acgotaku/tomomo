@@ -26,7 +26,15 @@ export default {
       }
     },
     hirakana: {
-      title: 'Japanese Conversion'
+      title: 'Japanese Conversion',
+      width: {
+        full: 'Full-width',
+        half: 'Half-width'
+      },
+      style: {
+        hiragana: 'Hiragana',
+        katakana: 'Katakana'
+      }
     }
   }
 };

@@ -186,45 +186,61 @@ const halfWidthKanaArray = [
   'ﾜﾞ'
 ];
 
-function fullWidthToHalfWidth(str: string): string {
-  str = fullWidthASCIITohalfWidthASCII(str);
-  str = fullWidthKanaToHalfWidthKana(str);
+function toHalfWidth(str: string): string {
+  str = toHalfWidthASCII(str);
+  str = toHalfWidthKana(str);
   return str;
 }
 
-function haldWidthToFullWidth(str: string): string {
-  str = halfWidthASCIIToFullWidthASCII(str);
-  str = halfWidthKanaToFullWidthKana(str);
+function toFullWidth(str: string): string {
+  str = toFullWidthASCII(str);
+  str = toFullWidthKana(str);
   return str;
 }
 
-function fullWidthASCIITohalfWidthASCII(ascii: string): string {
+function toHalfWidthASCII(ascii: string): string {
   return ascii.replace(/[Ａ-Ｚａ-ｚ０-９！-～]/g, s =>
     String.fromCharCode(s.charCodeAt(0) - 0xfee0)
   );
 }
 
-function halfWidthASCIIToFullWidthASCII(ascii: string): string {
+function toFullWidthASCII(ascii: string): string {
   return ascii.replace(/[A-Za-z0-9!-~]/g, s =>
     String.fromCharCode(s.charCodeAt(0) + 0xfee0)
   );
 }
 
-function fullWidthKanaToHalfWidthKana(kana: string): string {
+function toHalfWidthKana(kana: string): string {
   fullWidthKanaArray.forEach((regex, index) => {
     kana = kana.replace(new RegExp(regex, 'g'), halfWidthKanaArray[index]);
   });
   return kana;
 }
 
-function halfWidthKanaToFullWidthKana(kana: string): string {
+function toFullWidthKana(kana: string): string {
   halfWidthKanaArray.forEach((regex, index) => {
     kana = kana.replace(new RegExp(regex, 'g'), fullWidthKanaArray[index]);
   });
   return kana;
 }
 
+function kanaToHira(kana: string): string {
+  return kana.replace(/[\u30a1-\u30f6]/g, match => {
+    const chr = match.charCodeAt(0) - 0x60;
+    return String.fromCharCode(chr);
+  });
+}
+
+function hiraToKana(hira: string): string {
+  return hira.replace(/[\u3041-\u3096]/g, match => {
+    const chr = match.charCodeAt(0) + 0x60;
+    return String.fromCharCode(chr);
+  });
+}
+
 export default {
-  fullWidthToHalfWidth,
-  haldWidthToFullWidth
+  toHalfWidth,
+  toFullWidth,
+  kanaToHira,
+  hiraToKana
 };
