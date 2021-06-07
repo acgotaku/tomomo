@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.38fe0bce8569734e81bbc1908703d42c.js"
+  "/precache-manifest.1e5dbfe02ee0541f0d8cb059879b62a2.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "tomomo"});
