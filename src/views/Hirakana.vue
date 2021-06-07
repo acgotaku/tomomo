@@ -12,24 +12,27 @@
           ></Textarea>
         </div>
         <div :class="$style.result">
-          <Select :class="$style.select" v-model="width">
-            <option
-              v-for="width in widthOptions"
-              :key="width.value"
-              :value="width.value"
-            >
-              {{ width.label }}
-            </option>
-          </Select>
-          <Select :class="$style.select" v-model="style">
-            <option
-              v-for="style in styleOptions"
-              :key="style.value"
-              :value="style.value"
-            >
-              {{ style.label }}
-            </option>
-          </Select>
+          <div :class="$style.option">
+            <Select :class="$style.select" v-model="width">
+              <option
+                v-for="width in widthOptions"
+                :key="width.value"
+                :value="width.value"
+              >
+                {{ width.label }}
+              </option>
+            </Select>
+            <Select :class="$style.select" v-model="style">
+              <option
+                v-for="style in styleOptions"
+                :key="style.value"
+                :value="style.value"
+              >
+                {{ style.label }}
+              </option>
+            </Select>
+            <Button @click="copy"> {{ $t('common.copy') }}</Button>
+          </div>
           <Textarea
             :rows="8"
             :class="$style.textarea"
@@ -45,6 +48,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import hirakanaUtils from '@/utils/hirakana';
+import { copyText } from '@/utils/util';
 import { OptionItem } from '@/components/select';
 import Lang from '@/components/views/Lang.vue';
 import Header from '@/layout/Header.vue';
@@ -101,6 +105,10 @@ export default class Hirakana extends Vue {
       }
     ];
   }
+
+  copy(): void {
+    copyText(this.convertedText);
+  }
 }
 </script>
 
@@ -127,13 +135,35 @@ export default class Hirakana extends Vue {
     justify-content: space-between;
   }
 
+  .origin {
+    display: block;
+  }
+
+  .result {
+    display: block;
+  }
+
   .textarea {
     width: 400px;
+    max-width: 100%;
+  }
+
+  .option {
+    margin: 16px 0;
   }
 
   .select {
-    width: 96px;
-    margin: 0 16px 16px 0;
+    width: 112px;
+    margin-right: 16px;
+  }
+}
+
+@media screen and (max-width: $Mobile) {
+  .hirakana {
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 }
 </style>

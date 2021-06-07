@@ -3,7 +3,8 @@ export default {
     title: 'Tomomo',
     year: '年',
     month: '月',
-    day: '日'
+    day: '日',
+    copy: '复制'
   },
   views: {
     calendar: {
