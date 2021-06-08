@@ -1,12 +1,7 @@
 <template>
   <div :class="$style.lang">
     <button @click.stop="toggle" :class="$style.button">
-      <img
-        width="24"
-        height="24"
-        src="@/assets/icons/language.svg"
-        :class="$style.icon"
-      />
+      <Icon name="language" :class="$style.icon" />
     </button>
     <ul :class="$style.list" v-show="showLang">
       <li :class="$style.item">
@@ -70,8 +65,7 @@ export default class Lang extends Vue {
   display: flex;
 }
 .icon {
-  opacity: 0.85;
-  cursor: pointer;
+  color: var(--color-main);
 }
 
 .list {

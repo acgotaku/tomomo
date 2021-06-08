@@ -8,7 +8,7 @@ export default {
   },
   views: {
     calendar: {
-      title: '和暦と西暦を変換する',
+      title: '和暦西暦変換',
       japan: '和暦',
       west: '西暦',
       era: {

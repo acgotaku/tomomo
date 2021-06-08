@@ -1,4 +1,6 @@
 'use strict';
+const path = require('path');
+const ICON_PATH = path.resolve(__dirname, 'src/assets/icons');
 
 module.exports = {
   devServer: {
@@ -37,6 +39,9 @@ module.exports = {
         }
       }
     });
+
+    config.module.rule('svg').exclude.add(ICON_PATH).end();
+
     // https:// webpack.js.org/configuration/optimization/#optimizationruntimechunk
     config.optimization.runtimeChunk('single');
   },
@@ -44,5 +49,24 @@ module.exports = {
     if (process.env.NODE_ENV === 'production') {
       config.devtool = 'hidden-source-map';
     }
+    return {
+      module: {
+        rules: [
+          {
+            test: /\.svg$/i,
+            include: [ICON_PATH],
+            use: [
+              {
+                loader: 'svg-sprite-loader',
+                options: {
+                  symbolId: 'icon-[name]'
+                }
+              }
+            ]
+          }
+        ]
+      },
+      plugins: []
+    };
   }
 };
