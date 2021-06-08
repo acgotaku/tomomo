@@ -28,6 +28,6 @@ export default class Select extends Vue {
   line-height: 20px;
   border: 1px solid var(--color-border);
   color: var(--color-main);
-  background: right 4px center / 16px no-repeat url(~@/assets/icons/down.svg);
+  background: right 4px center / 16px no-repeat url(~@/assets/down.svg);
 }
 </style>
