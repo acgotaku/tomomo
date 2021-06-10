@@ -136,11 +136,11 @@ export default class Hirakana extends Vue {
   }
 
   .origin {
-    display: block;
+    width: 100%;
   }
 
   .result {
-    display: block;
+    width: 100%;
   }
 
   .textarea {
@@ -160,7 +160,12 @@ export default class Hirakana extends Vue {
 
 @media screen and (max-width: $Mobile) {
   .hirakana {
+    .title {
+      margin: 16px;
+    }
+
     .container {
+      padding: 8px;
       flex-direction: column;
       align-items: center;
     }
