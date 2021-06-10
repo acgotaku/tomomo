@@ -79,11 +79,40 @@
         </div>
       </div>
       <div :class="$style.notes">
-        <p>{{ $t('views.calendar.notes.reiwa') }}</p>
-        <p>{{ $t('views.calendar.notes.heisei') }}</p>
-        <p>{{ $t('views.calendar.notes.showa') }}</p>
-        <p>{{ $t('views.calendar.notes.taisho') }}</p>
-        <p>{{ $t('views.calendar.notes.meiji') }}</p>
+        <table :class="$style.table">
+          <thead>
+            <tr>
+              <td :class="$style.tableEra">
+                {{ $t('views.calendar.notes.era') }}
+              </td>
+              <td :class="$style.tableDate">
+                {{ $t('views.calendar.notes.startingDate') }}
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ $t('views.calendar.era.reiwa') }}</td>
+              <td>2019-05-01</td>
+            </tr>
+            <tr>
+              <td>{{ $t('views.calendar.era.heisei') }}</td>
+              <td>1989-01-08</td>
+            </tr>
+            <tr>
+              <td>{{ $t('views.calendar.era.showa') }}</td>
+              <td>1926-12-25</td>
+            </tr>
+            <tr>
+              <td>{{ $t('views.calendar.era.taisho') }}</td>
+              <td>1912-07-30</td>
+            </tr>
+            <tr>
+              <td>{{ $t('views.calendar.era.meiji') }}</td>
+              <td>1868-09-08</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
@@ -382,12 +411,27 @@ export default class Calendar extends Vue {
   }
 
   .notes {
-    padding: 32px 0;
-    font-size: 14px;
+    display: flex;
+    padding: 16px 0;
     color: var(--color-secondary);
+  }
 
-    p {
-      margin: 4px 0;
+  .table {
+    border-collapse: collapse;
+    border: none;
+
+    td {
+      line-height: 2;
+      font-variant-numeric: tabular-nums;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    &Era {
+      width: 128px;
+    }
+
+    &Date {
+      width: 128px;
     }
   }
 }
@@ -428,7 +472,7 @@ export default class Calendar extends Vue {
     }
   }
   .notes {
-    text-align: center;
+    justify-content: center;
   }
 }
 </style>
