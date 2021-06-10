@@ -52,6 +52,7 @@ import { copyText } from '@/utils/util';
 import { OptionItem } from '@/components/select';
 import Lang from '@/components/views/Lang.vue';
 import Header from '@/layout/Header.vue';
+import message from '@/components/message';
 
 @Component({
   components: {
@@ -107,7 +108,12 @@ export default class Hirakana extends Vue {
   }
 
   copy(): void {
-    copyText(this.convertedText);
+    const result = copyText(this.convertedText);
+    if (result) {
+      message.success(this.$i18n.t('common.copySuccess') as string);
+    } else {
+      message.warning(this.$i18n.t('common.copyFailed') as string);
+    }
   }
 }
 </script>
@@ -136,11 +142,11 @@ export default class Hirakana extends Vue {
   }
 
   .origin {
-    display: block;
+    width: 100%;
   }
 
   .result {
-    display: block;
+    width: 100%;
   }
 
   .textarea {
@@ -160,7 +166,12 @@ export default class Hirakana extends Vue {
 
 @media screen and (max-width: $Mobile) {
   .hirakana {
+    .title {
+      margin: 16px;
+    }
+
     .container {
+      padding: 8px;
       flex-direction: column;
       align-items: center;
     }

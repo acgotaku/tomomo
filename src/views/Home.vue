@@ -12,11 +12,27 @@
           <img
             width="128"
             height="128"
-            src="@/assets/icons/calendar.png"
+            src="@/assets/images/calendar.png"
             :class="$style.icon"
           />
           <span :class="$style.linkText">
             {{ $t('views.calendar.title') }}</span
+          >
+        </router-link>
+        <router-link
+          :class="$style.link"
+          :to="{
+            name: 'hirakana'
+          }"
+        >
+          <img
+            width="128"
+            height="128"
+            src="@/assets/images/hirakana.png"
+            :class="$style.icon"
+          />
+          <span :class="$style.linkText">
+            {{ $t('views.hirakana.title') }}</span
           >
         </router-link>
       </div>
@@ -49,6 +65,7 @@ export default class Home extends Vue {}
 
   .nav {
     display: flex;
+    flex-wrap: wrap;
     padding: 16px;
   }
 
@@ -57,7 +74,8 @@ export default class Home extends Vue {}
     flex-direction: column;
     align-items: center;
     font-size: 18px;
-    padding: 16px;
+    padding: 8px;
+    margin: 8px;
     border-radius: 8px;
 
     &:hover {

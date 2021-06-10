@@ -347,6 +347,7 @@ export default class Calendar extends Vue {
       width: 80px;
       margin-right: 16px;
     }
+
     .input {
       width: 80px;
     }
@@ -392,6 +393,10 @@ export default class Calendar extends Vue {
 }
 @media screen and (max-width: $Mobile) {
   .calendar {
+    .title {
+      margin: 16px;
+    }
+
     .container {
       flex-direction: column;
       align-items: center;

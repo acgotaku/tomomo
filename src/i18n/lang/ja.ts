@@ -4,7 +4,9 @@ export default {
     year: '年',
     month: '月',
     day: '日',
-    copy: 'コピー'
+    copy: 'コピー',
+    copySuccess: 'コピーしました！',
+    copyFailed: 'コピー失敗。'
   },
   views: {
     calendar: {
