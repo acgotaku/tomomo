@@ -4,7 +4,9 @@ export default {
     year: 'Year',
     month: 'Month',
     day: 'Day',
-    copy: 'Copy'
+    copy: 'Copy',
+    copySuccess: 'Copy successfully!',
+    copyFailed: 'Copy failed.'
   },
   views: {
     calendar: {
