@@ -4,7 +4,11 @@
     :to="isLink ? to : false"
     v-on="$listeners"
     :type="buttonType"
-    :class="[$style.button, $style[mode]]"
+    :disabled="disabled"
+    :class="{
+      [$style.button]: true,
+      [$style[mode]]: !disabled
+    }"
   >
     <span :class="$style.text">
       <slot></slot>
@@ -22,6 +26,7 @@ type ButtonMode = 'primary' | 'normal' | 'danger';
 export default class Button extends Vue {
   @Prop({ default: 'button' }) readonly type!: string;
   @Prop({ default: 'primary' }) readonly mode!: ButtonMode;
+  @Prop({ default: false, type: Boolean }) readonly disabled!: boolean;
   @Prop() readonly to!: RawLocation;
 
   get isLink(): boolean {
@@ -106,7 +111,6 @@ export default class Button extends Vue {
     }
   }
 
-  &[disabled],
   &:disabled {
     @mixin disabled-button;
     pointer-events: none;

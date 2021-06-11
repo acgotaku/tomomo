@@ -31,7 +31,9 @@
                 {{ style.label }}
               </option>
             </Select>
-            <Button @click="copy"> {{ $t('common.copy') }}</Button>
+            <Button @click="copy" :disabled="!convertedText">
+              {{ $t('common.copy') }}
+            </Button>
           </div>
           <Textarea
             :rows="8"
