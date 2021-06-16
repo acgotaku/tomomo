@@ -1,3 +1,3 @@
 # Tomomo
 
-Website: https://tomomo.icehoney.me/
+Website: https://tomomo.org/
