@@ -35,6 +35,9 @@ export default {
         hiragana: '平假名',
         katakana: '片假名'
       }
+    },
+    widthChecker: {
+      title: '全角半角检查'
     }
   }
 };

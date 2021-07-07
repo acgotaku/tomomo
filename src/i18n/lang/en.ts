@@ -35,6 +35,9 @@ export default {
         hiragana: 'Hiragana',
         katakana: 'Katakana'
       }
+    },
+    widthChecker: {
+      title: 'Character Width Checker'
     }
   }
 };

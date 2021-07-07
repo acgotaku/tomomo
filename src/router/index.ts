@@ -5,6 +5,8 @@ const Calendar = () =>
   import(/* webpackChunkName: "calendar" */ '@/views/Calendar.vue');
 const Hirakana = () =>
   import(/* webpackChunkName: "hirakana" */ '@/views/Hirakana.vue');
+const WidthChecker = () =>
+  import(/* webpackChunkName: "width_checker" */ '@/views/WidthChecker.vue');
 const NotFound = () =>
   import(/* webpackChunkName: "not_found" */ '@/views/NotFound.vue');
 
@@ -25,6 +27,11 @@ const routes: Array<RouteConfig> = [
     path: '/hirakana',
     name: 'hirakana',
     component: Hirakana
+  },
+  {
+    path: '/width_checker',
+    name: 'widthChecker',
+    component: WidthChecker
   }
 ];
 
