@@ -92,7 +92,7 @@ const fullWidthKanaArray = [
   'ヷ'
 ];
 
-const halfWidthKanaArray = [
+export const halfWidthKanaArray = [
   '｡',
   '｢',
   '｣',

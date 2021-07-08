@@ -50,6 +50,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import hirakanaUtils from '@/utils/hirakana';
+import { checkWidth } from '@/utils/width';
 import { copyText } from '@/utils/util';
 import { OptionItem } from '@/components/select';
 import Lang from '@/components/views/Lang.vue';
@@ -70,6 +71,7 @@ export default class WidthChecker extends Vue {
   style = 'katakana';
 
   get convertedText(): string {
+    console.log(checkWidth(this.text));
     const defaultText = hirakanaUtils.toFullWidth(this.text);
     const newText =
       this.style === 'katakana'
