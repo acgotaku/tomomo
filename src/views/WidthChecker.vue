@@ -27,11 +27,11 @@
             <span
               v-for="(text, index) in convertedText"
               :key="index"
-              v-html="formatText(text.content)"
               :class="{
                 [$style.highlight]: text.width === width
               }"
             >
+              {{ text.content }}
             </span>
           </div>
         </div>
@@ -56,7 +56,7 @@ import Header from '@/layout/Header.vue';
 export default class WidthChecker extends Vue {
   text = '';
 
-  width = 'full';
+  width = 'half';
 
   style = 'katakana';
 
@@ -75,19 +75,6 @@ export default class WidthChecker extends Vue {
         label: this.$i18n.t('views.hirakana.width.half') as string
       }
     ];
-  }
-
-  formatText(text: string): string {
-    return text
-      .split('')
-      .map(char => {
-        if (char === '\n') {
-          return '<br />';
-        } else {
-          return char;
-        }
-      })
-      .join('');
   }
 }
 </script>
@@ -130,6 +117,7 @@ export default class WidthChecker extends Vue {
       line-height: 20px;
       border: 1px solid var(--color-border);
       color: var(--color-main);
+      white-space: pre-line;
 
       &:hover,
       &:focus {

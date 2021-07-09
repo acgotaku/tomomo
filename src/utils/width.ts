@@ -5,7 +5,7 @@ export interface WidthSlice {
   content: string;
 }
 
-export function checkWidth(str: string): Array<WidthSlice> {
+export function checkWidth(text: string): Array<WidthSlice> {
   const halfWidthRegex = new RegExp(
     `[A-Za-z0-9!-~${halfWidthKanaArray.join('')}]+`,
     'g'
@@ -15,8 +15,8 @@ export function checkWidth(str: string): Array<WidthSlice> {
     'g'
   );
 
-  const halfArray = str.match(halfWidthRegex);
-  const fullArray = str.match(fullWidthRegex);
+  const halfArray = text.match(halfWidthRegex);
+  const fullArray = text.match(fullWidthRegex);
 
   const result: Array<WidthSlice> = [];
 
@@ -37,7 +37,7 @@ export function checkWidth(str: string): Array<WidthSlice> {
       });
     });
   } else if (halfArray && fullArray) {
-    if (halfArray[0][0] === str[0]) {
+    if (halfArray[0][0] === text[0]) {
       // half first
       while (halfArray.length > 0 || fullArray.length > 0) {
         const halfStr = halfArray.shift();
