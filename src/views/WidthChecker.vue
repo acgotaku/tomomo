@@ -68,11 +68,11 @@ export default class WidthChecker extends Vue {
     return [
       {
         value: 'full',
-        label: this.$i18n.t('views.hirakana.width.full') as string
+        label: this.$i18n.t('common.width.full') as string
       },
       {
         value: 'half',
-        label: this.$i18n.t('views.hirakana.width.half') as string
+        label: this.$i18n.t('common.width.half') as string
       }
     ];
   }

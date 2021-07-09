@@ -6,7 +6,11 @@ export default {
     day: 'Day',
     copy: 'Copy',
     copySuccess: 'Copy successfully!',
-    copyFailed: 'Copy failed.'
+    copyFailed: 'Copy failed.',
+    width: {
+      full: 'Full-width',
+      half: 'Half-width'
+    }
   },
   views: {
     calendar: {
@@ -27,10 +31,6 @@ export default {
     },
     hirakana: {
       title: 'Japanese Conversion',
-      width: {
-        full: 'Full-width',
-        half: 'Half-width'
-      },
       style: {
         hiragana: 'Hiragana',
         katakana: 'Katakana'
