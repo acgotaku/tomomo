@@ -6,7 +6,11 @@ export default {
     day: '日',
     copy: 'コピー',
     copySuccess: 'コピーしました！',
-    copyFailed: 'コピー失敗。'
+    copyFailed: 'コピー失敗。',
+    width: {
+      full: '全角',
+      half: '半角'
+    }
   },
   views: {
     calendar: {
@@ -27,14 +31,13 @@ export default {
     },
     hirakana: {
       title: '文字を変換する',
-      width: {
-        full: '全角',
-        half: '半角'
-      },
       style: {
         hiragana: 'ひらがな',
         katakana: 'カタカナ'
       }
+    },
+    widthChecker: {
+      title: '全角半角チェッカー'
     }
   }
 };

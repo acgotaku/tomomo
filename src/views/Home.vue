@@ -35,6 +35,22 @@
             {{ $t('views.hirakana.title') }}</span
           >
         </router-link>
+        <router-link
+          :class="$style.link"
+          :to="{
+            name: 'widthChecker'
+          }"
+        >
+          <img
+            width="128"
+            height="128"
+            src="@/assets/images/width_checker.png"
+            :class="$style.icon"
+          />
+          <span :class="$style.linkText">
+            {{ $t('views.widthChecker.title') }}</span
+          >
+        </router-link>
       </div>
     </div>
   </div>

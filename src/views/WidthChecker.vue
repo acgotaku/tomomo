@@ -1,8 +1,8 @@
 <template>
-  <div :class="$style.hirakana">
+  <div :class="$style.widthChecker">
     <Header />
-    <div :class="$style.hirakanaInner">
-      <h2 :class="$style.title">{{ $t('views.hirakana.title') }}</h2>
+    <div :class="$style.widthCheckerInner">
+      <h2 :class="$style.title">{{ $t('views.widthChecker.title') }}</h2>
       <div :class="$style.container">
         <div :class="$style.origin">
           <Textarea
@@ -22,25 +22,18 @@
                 {{ width.label }}
               </option>
             </Select>
-            <Select :class="$style.select" v-model="style">
-              <option
-                v-for="style in styleOptions"
-                :key="style.value"
-                :value="style.value"
-              >
-                {{ style.label }}
-              </option>
-            </Select>
-            <Button @click="copy" :disabled="!convertedText">
-              {{ $t('common.copy') }}
-            </Button>
           </div>
-          <Textarea
-            :rows="8"
-            :class="$style.textarea"
-            :readonly="true"
-            v-model="convertedText"
-          ></Textarea>
+          <div :class="$style.resultText">
+            <span
+              v-for="(text, index) in convertedText"
+              :key="index"
+              :class="{
+                [$style.highlight]: text.width === width
+              }"
+            >
+              {{ text.content }}
+            </span>
+          </div>
         </div>
       </div>
     </div>
@@ -49,12 +42,10 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import hirakanaUtils from '@/utils/hirakana';
-import { copyText } from '@/utils/util';
+import { checkWidth, WidthSlice } from '@/utils/width';
 import { OptionItem } from '@/components/select';
 import Lang from '@/components/views/Lang.vue';
 import Header from '@/layout/Header.vue';
-import message from '@/components/message';
 
 @Component({
   components: {
@@ -62,25 +53,15 @@ import message from '@/components/message';
     Header
   }
 })
-export default class Hirakana extends Vue {
+export default class WidthChecker extends Vue {
   text = '';
 
-  width = 'full';
+  width = 'half';
 
   style = 'katakana';
 
-  get convertedText(): string {
-    const defaultText = hirakanaUtils.toFullWidth(this.text);
-    const newText =
-      this.style === 'katakana'
-        ? hirakanaUtils.hiraToKana(defaultText)
-        : hirakanaUtils.kanaToHira(defaultText);
-    const widthText =
-      this.width === 'full'
-        ? hirakanaUtils.toFullWidth(newText)
-        : hirakanaUtils.toHalfWidth(newText);
-
-    return widthText;
+  get convertedText(): Array<WidthSlice> {
+    return checkWidth(this.text);
   }
 
   get widthOptions(): Array<OptionItem> {
@@ -95,35 +76,13 @@ export default class Hirakana extends Vue {
       }
     ];
   }
-
-  get styleOptions(): Array<OptionItem> {
-    return [
-      {
-        value: 'hiragana',
-        label: this.$i18n.t('views.hirakana.style.hiragana') as string
-      },
-      {
-        value: 'katakana',
-        label: this.$i18n.t('views.hirakana.style.katakana') as string
-      }
-    ];
-  }
-
-  copy(): void {
-    const result = copyText(this.convertedText);
-    if (result) {
-      message.success(this.$i18n.t('common.copySuccess') as string);
-    } else {
-      message.warning(this.$i18n.t('common.copyFailed') as string);
-    }
-  }
 }
 </script>
 
 <style lang="postcss" module>
 @import '@/styles/variables.css';
 
-.hirakana {
+.widthChecker {
   display: block;
 
   &Inner {
@@ -143,9 +102,33 @@ export default class Hirakana extends Vue {
     justify-content: space-between;
   }
 
-  .origin,
+  .origin {
+    width: 100%;
+  }
+
   .result {
     width: 100%;
+
+    &Text {
+      width: 400px;
+      height: 172px;
+      border-radius: 4px;
+      padding: 5px 8px;
+      line-height: 20px;
+      border: 1px solid var(--color-border);
+      color: var(--color-main);
+      white-space: pre-line;
+      margin: 0 auto;
+
+      &:hover,
+      &:focus {
+        border: 1px solid var(--color-primary);
+      }
+    }
+
+    .highlight {
+      background-color: var(--color-highlight);
+    }
   }
 
   .textarea {
@@ -166,7 +149,7 @@ export default class Hirakana extends Vue {
 }
 
 @media screen and (max-width: $Mobile) {
-  .hirakana {
+  .widthChecker {
     .title {
       margin: 16px;
     }

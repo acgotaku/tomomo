@@ -6,7 +6,11 @@ export default {
     day: '日',
     copy: '复制',
     copySuccess: '复制成功！',
-    copyFailed: '复制失败。'
+    copyFailed: '复制失败。',
+    width: {
+      full: '全角',
+      half: '半角'
+    }
   },
   views: {
     calendar: {
@@ -27,14 +31,13 @@ export default {
     },
     hirakana: {
       title: '平假名片假名转换',
-      width: {
-        full: '全角',
-        half: '半角'
-      },
       style: {
         hiragana: '平假名',
         katakana: '片假名'
       }
+    },
+    widthChecker: {
+      title: '全角半角检查'
     }
   }
 };
