@@ -143,10 +143,7 @@ export default class Hirakana extends Vue {
     justify-content: space-between;
   }
 
-  .origin {
-    width: 100%;
-  }
-
+  .origin,
   .result {
     width: 100%;
   }
@@ -154,10 +151,12 @@ export default class Hirakana extends Vue {
   .textarea {
     width: 400px;
     max-width: 100%;
+    margin: 0 auto;
   }
 
   .option {
-    margin: 16px 0;
+    width: 400px;
+    margin: 16px auto;
   }
 
   .select {

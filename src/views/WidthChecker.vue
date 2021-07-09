@@ -118,6 +118,7 @@ export default class WidthChecker extends Vue {
       border: 1px solid var(--color-border);
       color: var(--color-main);
       white-space: pre-line;
+      margin: 0 auto;
 
       &:hover,
       &:focus {
@@ -133,10 +134,12 @@ export default class WidthChecker extends Vue {
   .textarea {
     width: 400px;
     max-width: 100%;
+    margin: 0 auto;
   }
 
   .option {
-    margin: 16px 0;
+    width: 400px;
+    margin: 16px auto;
   }
 
   .select {
@@ -146,7 +149,7 @@ export default class WidthChecker extends Vue {
 }
 
 @media screen and (max-width: $Mobile) {
-  .hirakana {
+  .widthChecker {
     .title {
       margin: 16px;
     }
