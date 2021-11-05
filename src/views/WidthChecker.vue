@@ -119,6 +119,7 @@ export default class WidthChecker extends Vue {
       color: var(--color-main);
       white-space: pre-line;
       margin: 0 auto;
+      overflow: auto;
 
       &:hover,
       &:focus {
