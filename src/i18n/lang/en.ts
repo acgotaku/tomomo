@@ -38,6 +38,9 @@ export default {
     },
     widthChecker: {
       title: 'Character Width Checker'
+    },
+    qrcode: {
+      title: 'QR Code Generator'
     }
   }
 };

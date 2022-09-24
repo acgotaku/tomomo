@@ -51,6 +51,20 @@
             {{ $t('views.widthChecker.title') }}</span
           >
         </router-link>
+        <router-link
+          :class="$style.link"
+          :to="{
+            name: 'QRCode'
+          }"
+        >
+          <img
+            width="128"
+            height="128"
+            src="@/assets/images/width_checker.png"
+            :class="$style.icon"
+          />
+          <span :class="$style.linkText"> {{ $t('views.qrcode.title') }}</span>
+        </router-link>
       </div>
     </div>
   </div>
@@ -76,7 +90,7 @@ export default class Home extends Vue {}
   .container {
     position: relative;
     margin: 0 auto;
-    max-width: 960px;
+    max-width: 1080px;
   }
 
   .nav {

@@ -38,6 +38,9 @@ export default {
     },
     widthChecker: {
       title: '全角半角检查'
+    },
+    qrcode: {
+      title: '二维码生成器'
     }
   }
 };

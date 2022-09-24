@@ -52,13 +52,11 @@ import { Component, Vue } from 'vue-property-decorator';
 import hirakanaUtils from '@/utils/hirakana';
 import { copyText } from '@/utils/util';
 import { OptionItem } from '@/components/select';
-import Lang from '@/components/views/Lang.vue';
 import Header from '@/layout/Header.vue';
 import message from '@/components/message';
 
 @Component({
   components: {
-    Lang,
     Header
   }
 })
