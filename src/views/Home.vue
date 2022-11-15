@@ -60,7 +60,7 @@
           <img
             width="128"
             height="128"
-            src="@/assets/images/width_checker.png"
+            src="@/assets/images/qr_code.png"
             :class="$style.icon"
           />
           <span :class="$style.linkText"> {{ $t('views.qrcode.title') }}</span>

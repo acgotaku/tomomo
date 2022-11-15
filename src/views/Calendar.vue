@@ -461,13 +461,13 @@ export default class Calendar extends Vue {
       }
 
       .input {
-        width: 56px;
+        width: 64px;
       }
     }
 
     .west {
       .input {
-        width: 56px;
+        width: 64px;
       }
     }
   }
