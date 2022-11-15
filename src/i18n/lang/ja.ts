@@ -38,6 +38,9 @@ export default {
     },
     widthChecker: {
       title: '全角半角チェッカー'
+    },
+    qrcode: {
+      title: 'QRコード作成'
     }
   }
 };
