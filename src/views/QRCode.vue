@@ -49,8 +49,16 @@ export default class QRCode extends Vue {
 }
 </script>
 <style lang="postcss" module>
+@import '@/styles/variables.css';
+
 .qrcode {
   display: block;
+
+  &Inner {
+    position: relative;
+    margin: 0 auto;
+    max-width: 960px;
+  }
 
   .title {
     margin: 24px;
@@ -59,14 +67,13 @@ export default class QRCode extends Vue {
 
   .container {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 16px;
   }
 
   .origin,
   .result {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -80,6 +87,16 @@ export default class QRCode extends Vue {
 
   .image {
     margin: 0;
+  }
+}
+
+@media screen and (max-width: $Mobile) {
+  .qrcode {
+    .container {
+      padding: 8px;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 }
 </style>
